@@ -1,0 +1,1788 @@
+/* =========================================================
+   APARNA AJI — BRIDE WEDDING INVITATION
+   LUXURY MAROON THEME
+   ========================================================= */
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+    --maroon: #660000;
+    --maroon-dark: #4A0000;
+    --maroon-light: #720909;
+
+    --gold: #C9A45C;
+    --gold-light: #E5CF9F;
+    --gold-soft: #D8C09A;
+
+    --ivory: #F3E7D3;
+    --ivory-light: #FFF9EF;
+    --ivory-soft: #E8DCC9;
+
+    --text: #F3E7D3;
+
+    --serif: "Baskerville", "Times New Roman", serif;
+    --script: "Brush Script MT", "Segoe Script", cursive;
+
+    --border: rgba(201, 164, 92, 0.38);
+    --border-light: rgba(201, 164, 92, 0.22);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--maroon);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--maroon);
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   LOADING SCREEN
+   ========================================================= */
+
+.loading {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--maroon);
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.loading.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-symbol {
+    color: var(--gold-light);
+
+    font-size: 52px;
+
+    animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   COVER / OPENING SCREEN
+   ========================================================= */
+
+.cover {
+    position: relative;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+
+/* Elegant corner ornaments */
+
+.cover::before,
+.cover::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border: 1px solid var(--border-light);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.cover::before {
+    top: -190px;
+    left: -190px;
+}
+
+.cover::after {
+    right: -190px;
+    bottom: -190px;
+}
+
+
+/* Cover content */
+
+.cover-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(90%, 650px);
+
+    padding: 50px 20px;
+}
+
+
+/* Top ornament */
+
+.cover-ornament {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 34px;
+}
+
+
+/* Small heading */
+
+.cover-small {
+    margin: 0;
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    letter-spacing: 0.45em;
+
+    text-transform: uppercase;
+}
+
+
+/* Subtitle */
+
+.cover-subtitle {
+    margin: 15px 0 25px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: 0.3em;
+
+    opacity: 0.8;
+}
+
+
+/* Gold line */
+
+.cover-line {
+    width: 90px;
+    height: 1px;
+
+    margin: 20px auto;
+
+    background: var(--gold);
+}
+
+
+/* Bride / Groom names */
+
+.cover-bride,
+.cover-groom {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: clamp(60px, 13vw, 105px);
+
+    font-weight: 400;
+
+    line-height: 0.85;
+}
+
+.cover-groom {
+    margin-top: 10px;
+}
+
+
+/* Last names */
+
+.cover-lastname {
+    margin: 8px 0 0;
+
+    color: var(--gold);
+
+    font-size: 15px;
+
+    letter-spacing: 0.35em;
+}
+
+
+/* Ampersand */
+
+.cover-amp {
+    margin: 18px 0;
+
+    color: var(--gold);
+
+    font-size: 35px;
+}
+
+
+/* Date */
+
+.cover-date {
+    margin: 30px 0 10px;
+
+    color: var(--ivory);
+
+    font-size: 14px;
+
+    letter-spacing: 0.25em;
+}
+
+
+/* Invitation text */
+
+.cover-invite {
+    margin: 0 0 30px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: 0.25em;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+   ========================================================= */
+
+.open-btn {
+    padding: 13px 34px;
+
+    border: 1px solid var(--gold-light);
+
+    background: transparent;
+
+    color: var(--ivory);
+
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.open-btn:hover {
+    background: var(--gold);
+
+    color: var(--maroon);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+#invitation {
+    width: 100%;
+
+    background: var(--maroon);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+
+/* Remove decorative circles from hero */
+
+.hero::before,
+.hero::after {
+    content: none;
+    display: none;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 20px;
+}
+
+
+/* Hero eyebrow */
+
+.eyebrow {
+    margin: 0 0 35px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    letter-spacing: 0.4em;
+
+    text-transform: uppercase;
+}
+
+
+/* Hero names */
+
+.hero h1 {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: clamp(65px, 14vw, 125px);
+
+    font-weight: 400;
+
+    line-height: 0.75;
+}
+
+
+/* Hero surname */
+
+.hero-last {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--gold);
+
+    font-size: 16px;
+
+    letter-spacing: 0.4em;
+}
+
+
+/* Hero ampersand */
+
+.hero-amp {
+    margin: 28px 0;
+
+    color: var(--gold);
+
+    font-size: 40px;
+}
+
+
+/* Hero flourish */
+
+.hero-flourish {
+    margin-top: 32px;
+
+    color: var(--gold);
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+   ========================================================= */
+
+.section {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 90px 25px;
+
+    text-align: center;
+
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+
+/* Small heading */
+
+.small-heading {
+    margin: 0 0 20px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+}
+
+
+/* Section title */
+
+.section-title {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.introduction {
+    background: var(--maroon);
+}
+
+.introduction h2 {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: 54px;
+
+    font-weight: 400;
+}
+
+.intro-text {
+    margin: 15px 0 40px;
+
+    color: var(--ivory-soft);
+
+    line-height: 1.7;
+}
+
+
+/* Names */
+
+.names {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 45px;
+}
+
+.name-block h3 {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: 43px;
+
+    font-weight: 400;
+}
+
+.name-block span {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+.name-symbol {
+    color: var(--gold);
+
+    font-size: 35px;
+}
+
+
+/* =========================================================
+   FAMILY SECTION
+   ========================================================= */
+
+.family-section {
+    width: 100%;
+
+    max-width: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0;
+
+    padding: 0;
+
+    background: var(--maroon);
+}
+
+
+/* Family cards */
+
+.family-card {
+    padding: 80px 40px;
+
+    background: var(--maroon);
+
+    color: var(--ivory);
+
+    border: 1px solid var(--border);
+}
+
+.family-card:nth-child(2) {
+    background: var(--maroon);
+}
+
+
+/* Family heading */
+
+.family-label {
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+}
+
+
+/* Flourish */
+
+.family-flourish {
+    margin: 20px 0;
+
+    color: var(--gold);
+
+    font-size: 25px;
+}
+
+
+/* Parents label */
+
+.parents-label {
+    margin: 0 0 12px;
+
+    color: var(--gold-soft);
+
+    font-size: 12px;
+
+    opacity: 0.9;
+}
+
+
+/* Parents names */
+
+.family-card h3 {
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    line-height: 1.4;
+}
+
+.family-card h3 span {
+    color: var(--gold);
+}
+
+
+/* Address */
+
+.address {
+    margin-top: 22px;
+
+    color: var(--ivory-soft);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ANNOUNCEMENT
+   ========================================================= */
+
+.announcement {
+    background: var(--maroon);
+}
+
+.announcement h2 {
+    margin: 15px 0 0;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: 62px;
+
+    font-weight: 400;
+}
+
+.role {
+    margin: 3px 0;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+.big-amp {
+    margin: 10px 0;
+
+    color: var(--gold);
+
+    font-size: 38px;
+}
+
+
+/* =========================================================
+   WEDDING DETAILS
+   ========================================================= */
+
+.wedding-details {
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+.wedding-details .small-heading {
+    color: var(--gold-light);
+}
+
+.wedding-details .section-title {
+    color: var(--ivory);
+}
+
+
+/* Gold divider */
+
+.gold-divider {
+    margin: 25px 0 45px;
+
+    color: var(--gold);
+
+    font-size: 24px;
+}
+
+
+/* Details grid */
+
+.details-grid {
+    max-width: 700px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border: 1px solid var(--border);
+}
+
+
+/* Detail card */
+
+.detail-card {
+    padding: 40px 25px;
+
+    border-right: 1px solid var(--border);
+}
+
+.detail-card:last-child {
+    border-right: none;
+}
+
+
+/* Detail icon */
+
+.detail-icon {
+    margin-bottom: 15px;
+
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+
+/* Detail label */
+
+.detail-label {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: var(--gold-light);
+
+    font-size: 9px;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+}
+
+
+/* Detail text */
+
+.detail-card strong {
+    display: block;
+
+    margin: 7px 0;
+
+    color: var(--ivory);
+
+    font-size: 12px;
+
+    letter-spacing: 0.2em;
+}
+
+.detail-card b {
+    display: block;
+
+    margin: 5px;
+
+    color: var(--ivory);
+
+    font-size: 50px;
+
+    font-weight: 400;
+}
+
+
+/* Venue inside details */
+
+.venue-box {
+    margin: 55px auto 45px;
+}
+
+.venue-box h3 {
+    margin: 10px 0 5px;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: 45px;
+
+    font-weight: 400;
+}
+
+.venue-box p {
+    margin: 0;
+
+    color: var(--gold-light);
+}
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-wrap {
+    margin: 50px auto 35px;
+}
+
+.countdown-title {
+    margin-bottom: 20px;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+}
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.countdown > div {
+    width: 90px;
+
+    padding: 17px 5px;
+
+    border: 1px solid var(--border);
+}
+
+.countdown strong {
+    display: block;
+
+    color: var(--ivory);
+
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+.countdown span {
+    color: var(--gold-light);
+
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.gold-btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border: 1px solid var(--gold);
+
+    background: var(--gold);
+
+    color: var(--maroon);
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.gold-btn:hover {
+    background: transparent;
+
+    border-color: var(--gold-light);
+
+    color: var(--gold-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+.calendar-section {
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+.calendar {
+    max-width: 500px;
+
+    margin: 40px auto 0;
+
+    padding: 25px;
+
+    background: var(--maroon);
+
+    border: 1px solid var(--border);
+}
+
+
+/* Calendar heading */
+
+.cal-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.cal-head strong {
+    color: var(--ivory);
+
+    font-size: 12px;
+
+    letter-spacing: 0.2em;
+}
+
+.cal-head span {
+    color: var(--gold);
+
+    font-size: 22px;
+}
+
+
+/* Calendar grids */
+
+.weekdays,
+.days {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+}
+
+
+/* Weekday */
+
+.weekdays span {
+    padding: 8px 0;
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+}
+
+
+/* Days */
+
+.days span {
+    padding: 12px 5px;
+
+    color: var(--ivory);
+
+    font-size: 12px;
+}
+
+
+/* Event day */
+
+.days .event-day {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    margin: auto;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--maroon);
+}
+
+
+/* =========================================================
+   VENUE
+   ========================================================= */
+
+.venue {
+    background: var(--maroon);
+
+    color: var(--ivory);
+}
+
+.venue-name {
+    margin: 25px 0 4px;
+
+    color: var(--ivory);
+
+    font-family: var(--script);
+
+    font-size: 46px;
+
+    font-weight: 400;
+}
+
+.venue-location {
+    margin-top: 0;
+
+    color: var(--gold-light);
+}
+
+
+/* Map */
+
+.map-card {
+    width: 100%;
+
+    max-width: 800px;
+
+    height: 360px;
+
+    margin: 35px auto;
+
+    overflow: hidden;
+
+    border: 4px solid var(--gold);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   RSVP
+   ========================================================= */
+
+.rsvp {
+    background: var(--maroon);
+
+    color: var(--ivory);
+
+    border-top: 1px solid var(--border-light);
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.rsvp .section-title {
+    color: var(--ivory);
+}
+
+.rsvp .intro {
+    max-width: 550px;
+
+    margin: 20px auto 30px;
+
+    color: var(--ivory-soft);
+
+    line-height: 1.7;
+}
+
+.rsvp-flourish {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: var(--maroon);
+
+    color: var(--ivory);
+
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-flourish {
+    margin-bottom: 20px;
+
+    color: var(--gold);
+
+    font-size: 28px;
+}
+
+.footer p {
+    max-width: 500px;
+
+    margin: 0 auto 15px;
+
+    color: var(--ivory);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+.footer small {
+    color: var(--gold-light);
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
+.copyright {
+    padding: 30px 20px 40px;
+
+    text-align: center;
+
+    background: var(--maroon-dark);
+
+    color: var(--gold);
+
+    border-top: 1px solid var(--border-light);
+}
+
+.copyright p {
+    margin: 0 0 6px;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 0.1em;
+}
+
+.copyright span {
+    color: var(--gold-light);
+
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   RSVP MODAL
+   ========================================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9998;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(30, 0, 0, 0.85);
+}
+
+.modal-box {
+    position: relative;
+
+    width: min(100%, 430px);
+
+    padding: 45px 30px;
+
+    background: var(--ivory);
+
+    color: var(--maroon);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+
+    text-align: center;
+}
+
+
+/* Modal title */
+
+.modal-box h2 {
+    margin-top: 0;
+
+    color: var(--maroon);
+
+    font-family: var(--script);
+
+    font-size: 48px;
+
+    font-weight: 400;
+}
+
+
+/* Close */
+
+.close {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--maroon);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* RSVP form */
+
+#rsvpForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid rgba(102, 0, 0, 0.25);
+
+    outline: none;
+
+    background: var(--ivory-light);
+
+    color: var(--maroon);
+
+    font-size: 14px;
+}
+
+#rsvpForm input:focus,
+#rsvpForm select:focus,
+#rsvpForm textarea:focus {
+    border-color: var(--gold);
+}
+
+#rsvpForm textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+#rsvpForm .gold-btn {
+    width: 100%;
+}
+
+
+/* Form message */
+
+.form-message {
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    color: var(--maroon);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DECORATIVE GOLD LINES
+   ========================================================= */
+
+.details-grid,
+.detail-card {
+    border-color: var(--border);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    background: var(--gold);
+
+    color: var(--maroon);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--maroon-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-light);
+}
+
+
+/* =========================================================
+   MOBILE — 650px
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Cover */
+
+    .cover-inner {
+        padding: 40px 18px;
+    }
+
+    .cover-small {
+        font-size: 11px;
+
+        letter-spacing: 0.35em;
+    }
+
+    .cover-bride,
+    .cover-groom {
+        font-size: clamp(55px, 18vw, 80px);
+    }
+
+    .cover-lastname {
+        font-size: 12px;
+
+        letter-spacing: 0.25em;
+    }
+
+    .cover-date {
+        font-size: 12px;
+
+        letter-spacing: 0.18em;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 60px 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 19vw, 85px);
+    }
+
+    .hero-last {
+        font-size: 13px;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 70px 20px;
+    }
+
+
+    /* Introduction */
+
+    .introduction h2 {
+        font-size: 48px;
+    }
+
+    .names {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .name-block h3 {
+        font-size: 40px;
+    }
+
+    .name-symbol {
+        font-size: 26px;
+    }
+
+
+    /* Family */
+
+    .family-section {
+        grid-template-columns: 1fr;
+    }
+
+    .family-card {
+        padding: 65px 25px;
+    }
+
+
+    /* Announcement */
+
+    .announcement h2 {
+        font-size: 52px;
+    }
+
+
+    /* Details */
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-card {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .detail-card:last-child {
+        border-bottom: none;
+    }
+
+    .venue-box h3 {
+        font-size: 38px;
+    }
+
+
+    /* Countdown */
+
+    .countdown {
+        gap: 5px;
+    }
+
+    .countdown > div {
+        width: 72px;
+
+        padding: 15px 4px;
+    }
+
+    .countdown strong {
+        font-size: 22px;
+    }
+
+    .countdown span {
+        font-size: 7px;
+    }
+
+
+    /* Calendar */
+
+    .calendar {
+        padding: 18px;
+    }
+
+    .days span {
+        padding: 10px 3px;
+    }
+
+
+    /* Venue */
+
+    .venue-name {
+        font-size: 38px;
+    }
+
+    .map-card {
+        height: 300px;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        padding: 55px 20px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 420px
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .cover-bride,
+    .cover-groom {
+        font-size: 60px;
+    }
+
+    .cover-amp {
+        font-size: 30px;
+
+        margin: 14px 0;
+    }
+
+    .hero h1 {
+        font-size: 68px;
+    }
+
+    .hero-amp {
+        margin: 22px 0;
+
+        font-size: 34px;
+    }
+
+    .announcement h2 {
+        font-size: 46px;
+    }
+
+    .section-title {
+        font-size: 21px;
+
+        letter-spacing: 0.12em;
+    }
+
+    .countdown > div {
+        width: 64px;
+
+        padding: 13px 3px;
+    }
+
+    .countdown strong {
+        font-size: 20px;
+    }
+
+    .countdown span {
+        font-size: 6px;
+    }
+
+    .venue-name {
+        font-size: 34px;
+    }
+
+    .gold-btn {
+        padding: 13px 22px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .cover-bride,
+    .cover-groom {
+        font-size: 54px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .announcement h2 {
+        font-size: 42px;
+    }
+
+    .countdown > div {
+        width: 58px;
+    }
+
+    .countdown strong {
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   KRISHNA & RADHA HERO DECORATION
+   ========================================================= */
+
+.krishna-radha {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    width: 330px;
+    max-width: 42vw;
+
+    height: auto;
+
+    transform: translateY(-50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(0 0 12px rgba(201, 164, 92, 0.18))
+        drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25));
+}
+
+
+/* Keep names above artwork */
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .krishna-radha {
+        right: -35px;
+        top: 52%;
+
+        width: 300px;
+        max-width: none;
+
+        opacity: 0.30;
+    }
+
+}
+
+
+/* Very small screens */
+
+@media (max-width: 420px) {
+
+    .krishna-radha {
+        right: -55px;
+
+        width: 270px;
+
+        opacity: 0.25;
+    }
+
+}
