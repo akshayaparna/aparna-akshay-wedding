@@ -1786,3 +1786,63 @@ a {
     }
 
 }
+
+/* =========================================================
+   KRISHNA & RADHA HERO DECORATION
+========================================================= */
+
+.krishna-radha {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+
+    width: 350px;
+    height: auto;
+
+    transform: translateY(-50%);
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: 0.95;
+
+    filter:
+        drop-shadow(0 0 12px rgba(201, 164, 92, 0.18))
+        drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .krishna-radha {
+        right: -30px;
+        top: 52%;
+
+        width: 250px;
+
+        opacity: 0.30;
+    }
+
+}
+
+
+/* Small mobile */
+
+@media (max-width: 420px) {
+
+    .krishna-radha {
+        right: -45px;
+        width: 230px;
+
+        opacity: 0.25;
+    }
+
+}
